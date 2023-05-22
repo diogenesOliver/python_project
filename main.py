@@ -1,10 +1,14 @@
 import cryptocode
 
-chave = "423338233093093"
-mensagem = "Esta eh a minha mensagem! :)"
+insertKey = input("Enter a key: ")
+while len(insertKey) < 10:
+    print('Insufficient key size... Key size must be greater than ten')
+    insertKey = input("Enter a key: ")
 
-MensagemCriptografada = cryptocode.encrypt(mensagem, chave)
-print("Sua mensagem criptografada: " + MensagemCriptografada)
+insertMessage = input("Inser a message: ")
 
-MensagemDescriptografada = cryptocode.decrypt(MensagemCriptografada, chave)
-print("Sua mensagem descriptografada: " + MensagemDescriptografada)
+EncryptedMessage = cryptocode.encrypt(insertMessage, insertKey)
+DecryptedMessage = cryptocode.decrypt(EncryptedMessage, insertKey)
+
+print(EncryptedMessage)
+print(DecryptedMessage)
