@@ -6,9 +6,14 @@ while len(insertKey) < 10:
     insertKey = input("Enter a key: ")
 
 insertMessage = input("Inser a message: ")
-
 EncryptedMessage = cryptocode.encrypt(insertMessage, insertKey)
-DecryptedMessage = cryptocode.decrypt(EncryptedMessage, insertKey)
 
-print(EncryptedMessage)
+print("Messa crypted: " + EncryptedMessage)
+
+insertKeyToDecryptedMessage = input("Insert one key to decrypted one message: ")
+while insertKeyToDecryptedMessage != insertKey:
+    print("Incorrect key")
+    insertKeyToDecryptedMessage = input("Insert one key to decrypted one message: ")
+
+DecryptedMessage = cryptocode.decrypt(EncryptedMessage, insertKey)
 print(DecryptedMessage)
